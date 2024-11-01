@@ -15,7 +15,6 @@ CREATE OR REPLACE TABLE Employees(
     employeeID INT NOT NULL UNIQUE AUTO_INCREMENT,
     employeeName VARCHAR(64) NOT NULL,
     employeeRace VARCHAR(16) NOT NULL,
-    employeeID INT,
     PRIMARY KEY (employeeID)
 );
 
@@ -42,8 +41,40 @@ CREATE OR REPLACE TABLE SalesOrders(
 );
 
 INSERT INTO Customers(
-
+    customerName,
+    customerType,
+    customerRace,
 )
+VALUES
+    ('Joseph Carlson', 'Adventurer', 'Human')
+    ('Emma Rose', 'Merchant', 'Elf')
+    ('Grumly Rockstone', 'Miner', 'Dwarf')
+    ('Grog Skullcrusher', 'Mercenary', 'Orc')
+;
+
+
+INSERT INTO Employees(
+    employeeName,
+    employeeRace,
+)
+VALUES
+    ('Bob', 'Human')
+    ('Carlenia', 'Elf')
+    ('Bort Rockstone', 'Dwarf')
+;
+
+
+INSERT INTO Products(
+    price,
+    itemType,
+    itemRarity,
+    quantityStocked,
+)
+Values
+    (50.00, 'Hammer', 'Common', 5)
+    (25.00, 'Rations', 'Common', 15)
+    (500.00, 'Sword +1', 'Rare', 1)
+;
 
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
